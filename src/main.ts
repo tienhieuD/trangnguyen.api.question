@@ -47,10 +47,10 @@ async function bootstrap() {
     // Listen
     await app.listen(port, host);
 
-    logger.log(`==========================================================`);
+    // logger.log(`==========================================================`);
 
-    logger.log(`Environment Variable`, 'NestApplication');
-    logger.log(JSON.parse(JSON.stringify(process.env)), 'NestApplication');
+    // logger.log(`Environment Variable`, 'NestApplication');
+    // logger.log(JSON.parse(JSON.stringify(process.env)), 'NestApplication');
 
     logger.log(`==========================================================`);
 

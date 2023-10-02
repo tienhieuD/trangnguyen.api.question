@@ -1,14 +1,14 @@
 {
-  "name": "ack-nestjs-boilerplate",
-  "version": "5.4.5",
-  "description": "Ack NestJs Boilerplate",
+  "name": "trangnguyen.api.question",
+  "version": "1.0.0",
+  "description": "Question APIs for Trang Nguyen (trangnguyen.edu.vn)",
   "repository": {
     "type": "git",
     "url": "https://github.com/andrechristikan/ack-nestjs-boilerplate.git"
   },
   "author": {
-    "name": "andrechristikan",
-    "email": "ack@baibay.id"
+    "name": "trangnguyen.edu.vn",
+    "email": "dev@trangnguyen.edu.vn"
   },
   "private": true,
   "license": "MIT",
