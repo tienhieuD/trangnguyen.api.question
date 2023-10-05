@@ -1,6 +1,6 @@
 import { Controller, Get, VERSION_NEUTRAL } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
 import { AppHelloApiKeyDoc, AppHelloDoc } from 'src/app/docs/app.doc';
 import { AppHelloSerialization } from 'src/app/serializations/app.hello.serialization';
 import { ApiKeyPublicProtected } from 'src/common/api-key/decorators/api-key.decorator';
@@ -13,6 +13,7 @@ import { IResponse } from 'src/common/response/interfaces/response.interface';
 import { IResult } from 'ua-parser-js';
 
 @ApiTags('hello')
+@ApiExcludeController()
 @Controller({
     version: VERSION_NEUTRAL,
     path: '/',

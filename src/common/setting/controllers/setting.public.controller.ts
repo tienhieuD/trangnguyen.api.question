@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
 import { PaginationQuery } from 'src/common/pagination/decorators/pagination.decorator';
 import { PaginationListDto } from 'src/common/pagination/dtos/pagination.list.dto';
 import { PaginationService } from 'src/common/pagination/services/pagination.service';
@@ -31,6 +31,7 @@ import { SettingGetSerialization } from 'src/common/setting/serializations/setti
 import { SettingListSerialization } from 'src/common/setting/serializations/setting.list.serialization';
 import { SettingService } from 'src/common/setting/services/setting.service';
 
+@ApiExcludeController()
 @ApiTags('common.public.setting')
 @Controller({
     version: '1',

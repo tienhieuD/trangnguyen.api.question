@@ -12,7 +12,7 @@ import {
     HttpCode,
     HttpStatus,
 } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
 import { AuthService } from 'src/common/auth/services/auth.service';
 import { UploadFileSingle } from 'src/common/file/decorators/file.decorator';
 import { IFileExtract } from 'src/common/file/interfaces/file.interface';
@@ -97,6 +97,7 @@ import {
 import { ENUM_USER_SIGN_UP_FROM } from 'src/modules/user/constants/user.enum.constant';
 
 @ApiTags('modules.admin.user')
+@ApiExcludeController()
 @Controller({
     version: '1',
     path: '/user',

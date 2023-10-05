@@ -11,7 +11,7 @@ import {
     NotFoundException,
     Post,
 } from '@nestjs/common';
-import { ApiExcludeEndpoint, ApiTags } from '@nestjs/swagger';
+import { ApiExcludeController, ApiExcludeEndpoint, ApiTags } from '@nestjs/swagger';
 import { ClientSession, Connection } from 'mongoose';
 import { ENUM_AUTH_LOGIN_WITH } from 'src/common/auth/constants/auth.enum.constant';
 import {
@@ -46,6 +46,7 @@ import { UserPayloadSerialization } from 'src/modules/user/serializations/user.p
 import { UserService } from 'src/modules/user/services/user.service';
 
 @ApiTags('modules.public.user')
+@ApiExcludeController()
 @Controller({
     version: '1',
     path: '/user',

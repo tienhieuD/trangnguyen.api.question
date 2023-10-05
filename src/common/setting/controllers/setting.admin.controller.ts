@@ -1,5 +1,5 @@
 import { BadRequestException, Body, Controller, Put } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
 import { AuthJwtAdminAccessProtected } from 'src/common/auth/decorators/auth.jwt.decorator';
 import {
     ENUM_POLICY_ACTION,
@@ -19,6 +19,7 @@ import { SettingUpdateValueDto } from 'src/common/setting/dtos/setting.update-va
 import { SettingDoc } from 'src/common/setting/repository/entities/setting.entity';
 import { SettingService } from 'src/common/setting/services/setting.service';
 
+@ApiExcludeController()
 @ApiTags('common.admin.setting')
 @Controller({
     version: '1',

@@ -1,5 +1,5 @@
 import { Controller, Delete } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
 import { AuthJwtUserAccessProtected } from 'src/common/auth/decorators/auth.jwt.decorator';
 import { Response } from 'src/common/response/decorators/response.decorator';
 import {
@@ -11,6 +11,7 @@ import { UserDoc } from 'src/modules/user/repository/entities/user.entity';
 import { UserService } from 'src/modules/user/services/user.service';
 
 @ApiTags('modules.user.user')
+@ApiExcludeController()
 @Controller({
     version: '1',
     path: '/user',

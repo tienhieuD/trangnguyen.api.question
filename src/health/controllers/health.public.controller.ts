@@ -1,5 +1,5 @@
 import { Controller, Get, VERSION_NEUTRAL } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
 import {
     DiskHealthIndicator,
     HealthCheck,
@@ -16,6 +16,7 @@ import { HealthAwsS3Indicator } from 'src/health/indicators/health.aws-s3.indica
 import { HealthSerialization } from 'src/health/serializations/health.serialization';
 
 @ApiTags('health')
+@ApiExcludeController()
 @Controller({
     version: VERSION_NEUTRAL,
     path: '/health',

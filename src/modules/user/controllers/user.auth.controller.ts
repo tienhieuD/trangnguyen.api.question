@@ -12,7 +12,7 @@ import {
     SerializeOptions,
     UploadedFile,
 } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
 import {
     AuthJwtAccessProtected,
     AuthJwtPayload,
@@ -58,6 +58,7 @@ import { UserService } from 'src/modules/user/services/user.service';
 import { UserRefreshSerialization } from 'src/modules/user/serializations/user.refresh.serialization';
 
 @ApiTags('modules.auth.user')
+@ApiExcludeController()
 @Controller({
     version: '1',
     path: '/user',

@@ -7,7 +7,7 @@ import {
     Post,
     Put,
 } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
 import { ENUM_API_KEY_TYPE } from 'src/common/api-key/constants/api-key.enum.constant';
 import {
     API_KEY_DEFAULT_AVAILABLE_ORDER_BY,
@@ -79,6 +79,7 @@ import {
 import { ResponseIdSerialization } from 'src/common/response/serializations/response.id.serialization';
 
 @ApiTags('common.admin.apiKey')
+@ApiExcludeController()
 @Controller({
     version: '1',
     path: '/api-key',

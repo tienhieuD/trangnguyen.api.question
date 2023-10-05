@@ -8,7 +8,7 @@ import {
     Post,
     Put,
 } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
 import { AuthJwtAdminAccessProtected } from 'src/common/auth/decorators/auth.jwt.decorator';
 import {
     PaginationQuery,
@@ -75,6 +75,7 @@ import { UserDoc } from 'src/modules/user/repository/entities/user.entity';
 import { UserService } from 'src/modules/user/services/user.service';
 
 @ApiTags('modules.admin.role')
+@ApiExcludeController()
 @Controller({
     version: '1',
     path: '/role',

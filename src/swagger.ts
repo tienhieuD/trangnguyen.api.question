@@ -28,10 +28,10 @@ export default async function (app: NestApplication) {
             .setTitle(docName)
             .setDescription(docDesc)
             .setVersion(docVersion)
-            .addTag("API's")
-            .addServer('/')
-            .addServer('/staging')
-            .addServer('/prod')
+            // .addTag("API's")
+            // .addServer('/')
+            // .addServer('/staging')
+            // .addServer('/prod')
             .addBearerAuth(
                 { type: 'http', scheme: 'bearer', bearerFormat: 'JWT' },
                 'accessToken'
@@ -64,7 +64,7 @@ export default async function (app: NestApplication) {
             yamlDocumentUrl: `${docPrefix}/yaml`,
             explorer: false,
             customSiteTitle: docName,
-            customCss: theme.getBuffer('dark'),
+            customCss: theme.getBuffer('classic'),
             swaggerOptions: {
                 docExpansion: 'none',
                 persistAuthorization: true,
