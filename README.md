@@ -1,9 +1,3 @@
-[![Contributors][ack-contributors-shield]][ack-contributors]
-[![Forks][ack-forks-shield]][ack-forks]
-[![Stargazers][ack-stars-shield]][ack-stars]
-[![Issues][ack-issues-shield]][ack-issues]
-[![MIT License][ack-license-shield]][license]
-
 [![NestJs][nestjs-shield]][ref-nestjs]
 [![NodeJs][nodejs-shield]][ref-nodejs]
 [![Typescript][typescript-shield]][ref-typescript]
@@ -13,98 +7,35 @@
 [![Yarn][yarn-shield]][ref-yarn]
 [![Docker][docker-shield]][ref-docker]
 
-# ACK NestJs Boilerplate  🔥 🚀
+# Trang Nguyen API Question  🔥 🚀
 
-> This repo will representative of authentication service and authorization service
+> Documentation of this project in /docs
 
-[ACK NestJs][ack] is a [Http NestJs v10.x][ref-nestjs] boilerplate. Best uses for backend service.
+1. Prepare MongoDB, update your `.env` file
 
-*You can [request feature][ack-issues] or [report bug][ack-issues] with following this link*
+```bash
+...
+DATABASE_HOST=mongodb://localhost:30001,localhost:30002,localhost:30003
+DATABASE_NAME=ack
+DATABASE_USER=
+DATABASE_PASSWORD=
+DATABASE_DEBUG=false
+DATABASE_OPTIONS=replicaSet=rs0&retryWrites=true&w=majority
+...
+```
 
-## Table of contents
+2. Install dependancies
 
-- [ACK NestJs Boilerplate  🔥 🚀](#ack-nestjs-boilerplate---)
-  - [Table of contents](#table-of-contents)
-  - [Important](#important)
-  - [Next Todo](#next-todo)
-- [Documentation](#documentation)
-  - [License](#license)
-  - [Contribute](#contribute)
-    - [Rule](#rule)
-  - [Contact](#contact)
+```bash
+> yarn install
+```
 
-## Important
+3. Start your app
 
-> Very limited documentation
+```bash
+> yarn start:dev
+```
 
-* The features will be relate with AWS
-* Stateless Authorization
-* If you want to implement `database transactions`. You must run MongoDB as a `replication set`.
-* If you want to implement `Google SSO`. 
-    1. You must have google account, then set your app on `google console` to get the  `clientId` and `clientSecret`.
-* If you change the environment value of `APP_ENV` to `production`, that will trigger.
-    1. CorsMiddleware will implement `src/configs/middleware.config.ts`.
-    2. Documentation will `disable`.
-
-## Next Todo
-
-Next development
-
-* [ ] Update Documentation, add behaviors
-* [ ] Update Documentation, include an diagram for easier comprehension
-
-# Documentation
-
-Documentation of ack-nestjs-boilerplate in [/docs][documentation]
-
-## License
-
-Distributed under [MIT licensed][license].
-
-## Contribute
-
-How to contribute in this repo
-
-1. Fork the project with click `Fork` button of this repo.
-2. Clone the fork project
-
-    ```bash
-    git clone "url you just copied"
-    ```
-
-3. Make necessary changes and commit those changes
-4. Commit the changes
-
-    ```bash
-    git commit -m "your message"
-    ```
-
-5. Push changes to fork project
-
-    ```bash
-    git push origin -u main
-    ```
-
-6. Back to browser, goto your fork repo github. Then, click `Compare & pull request`
-
-If your code behind commit with the original, please update your code and resolve the conflict. Then, repeat from number 6.
-
-### Rule
-
-* Avoid Circular Dependency
-* Consume component based / modular folder structure, and repository design pattern
-* Always make `service` for every module is independently.
-* Do not put `controller` into modules, cause this will break the dependency. Only put the controller into `router` and then inject the dependency.
-* Put the config in `/configs` folder, and for dynamic config put as `environment variable`
-* `CommonModule` only for main package, and put the module that related of project into `/src/modules`.
-* If there a new service in CommonModule. Make sure to create the unit test in `/unit`.
-
-## Contact
-
-[Andre Christi kan][author-email]
-
-[![Github][github-shield]][author-github]
-[![LinkedIn][linkedin-shield]][author-linkedin]
 
 <!-- BADGE LINKS -->
 [ack-contributors-shield]: https://img.shields.io/github/contributors/andrechristikan/ack-nestjs-boilerplate?style=for-the-badge
