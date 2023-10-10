@@ -97,7 +97,7 @@ import {
 import { ENUM_USER_SIGN_UP_FROM } from 'src/modules/user/constants/user.enum.constant';
 
 @ApiTags('modules.admin.user')
-@ApiExcludeController()
+// @ApiExcludeController()
 @Controller({
     version: '1',
     path: '/user',

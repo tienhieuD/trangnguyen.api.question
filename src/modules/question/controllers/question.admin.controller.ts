@@ -3,7 +3,6 @@ import {
     Get
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { AuthJwtAdminAccessProtected } from 'src/common/auth/decorators/auth.jwt.decorator';
 import {
     PaginationQuery,
     PaginationQueryFilterInBoolean
@@ -33,7 +32,7 @@ import {
 import { QuestionListSerialization } from 'src/modules/question/serializations/question.list.serialization';
 import { QuestionService } from 'src/modules/question/services/question.service';
 
-@ApiTags('modules.public.question')
+@ApiTags('modules.admin.question')
 @Controller({
     version: '1',
     path: '/question',
@@ -48,7 +47,7 @@ export class QuestionAdminController {
     @ResponsePaging('question.list', {
         serialization: QuestionListSerialization,
     })
-    @AuthJwtAdminAccessProtected()
+    // @AuthJwtAdminAccessProtected()
     @Get('/list')
     async list(
         @PaginationQuery(
